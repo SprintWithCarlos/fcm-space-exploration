@@ -1,0 +1,100 @@
+@import "../../../style/custom"
+.crew
+
+  height: auto
+  min-height: 100vh
+  section
+    min-height: 100vh
+    height: auto
+    margin-top: 88px
+  .title__number
+    margin-right: 16px
+    font-weight: bold
+    color: rgba(255,255,255,0.25)
+    letter-spacing: 2.7px
+  hr
+    color: rgba(255,255,255,0.25)
+  picture
+    // display: flex
+    // justify-content: center
+    // align-items: flex-end
+    display: block
+    margin: unset
+    margin: 0 auto !important
+    width: 280px
+    height: 290px
+
+    img
+
+      height: 100% !important
+      width: 100% !important
+      object-fit: contain !important
+      object-position: bottom !important
+      aspect-ratio: 1/1
+
+  ul
+    list-style: none
+    display: flex
+    justify-content: center
+    gap: 4px
+    margin-bottom: 20px
+    .circle
+      position: relative
+      width: 30px
+      height: 30px
+      display: flex
+
+    .menu__item
+      width: 100%
+      height: auto
+      &:after
+        content: ""
+        position: absolute
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        background-color: rgba(255,255,255,0.25)
+        top: calc(50% - 5px)
+        left: calc(50% - 5px)
+        transition: 0.3s all ease-in-out
+
+      &.active
+        &:after
+          content: ""
+          position: absolute
+          width: 14px
+          height: 14px
+          border-radius: 50%
+          background-color: #fff
+          top: calc(50% - 5px)
+          left: calc(50% - 5px)
+      &:hover
+        &:after
+          content: ""
+          position: absolute
+          width: 10px
+          height: 10px
+          border-radius: 50%
+          background-color: #fff
+          top: calc(50% - 5px)
+          left: calc(50% - 5px)
+
+  .subitem
+    :first-child
+      margin-bottom: 8px
+  h3, h4
+    margin-top: 0
+    margin-bottom: 0
+  .column, .row
+    &>*
+
+      margin-bottom: 1.5rem
+  .role
+    font-family: $belle
+    text-transform: uppercase
+    font-size: 16px
+    color: rgba(255,255,255,0.5)
+  .name
+    font-family: $belle
+    text-transform: uppercase
+    font-size: 25px

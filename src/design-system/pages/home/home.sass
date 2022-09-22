@@ -1,21 +1,59 @@
 @import "../../../style/custom"
+
 .home
-  display: block
-  .wrapper
-    margin-top: 50px
-    @media screen and (min-width: $mobile +1)
-      display: grid
-      // width: 90%
-      max-width: 1000px
-      margin: 0 auto
-      margin-top: 50px
-      justify-content: center
-      align-items: center
-      height: 100vh
-      grid-template-columns: repeat(2,1fr)
-      grid-gap: 80px
-      &:first-child
-        flex: 1
-        width: 50%
-      &:last-child
-        flex: 1
+  position: relative
+  height: 100vh
+  @include tablet
+    height: 1024px
+
+  #first
+    @include slideinup-animation-long(2s)
+    @include tablet
+      margin: unset
+      margin-top: 106px
+      width: 450px
+      .nav__text
+        margin: unset
+        font-size: 20px
+        letter-spacing: 3.38px
+        margin-bottom: 24px
+      h1
+        margin: unset
+        height: unset
+        height: 150px
+        font-size: 150px
+        margin-bottom: 24px
+  #second
+    @include slideinup-animation-long(2.5s)
+    @include tablet
+      width: 450px
+      p
+        font-size: 16px
+  .explore
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $light
+    border-radius: 50%
+    color: black
+    width: 150px
+    height: 150px
+    bottom: 48px
+    font-family: $belle
+    font-size: 20px
+    letter-spacing: 1.25px
+    text-transform: uppercase
+    transition: 0.3s all ease-in-out
+    @include slideinup-animation-long(3s)
+    @include tablet
+      width: 242px
+      height: 242px
+      font-size: 32px
+    &:hover
+      cursor: pointer
+      outline: solid 30px rgba(255,255,255,0.1)
+    @include desktop
+      &:hover
+        cursor: pointer
+        outline: solid 30px rgba(255,255,255,0.1)

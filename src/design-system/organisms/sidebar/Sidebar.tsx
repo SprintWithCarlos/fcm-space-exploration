@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable implicit-arrow-linebreak */
 import { Link } from "react-router-dom";
 import Icon from "@/design-system/atoms/icon/Icon";
 import { capitalize } from "@/utils";
-// import { ReactComponent as CloseIcon } from "@/assets/icon-close.svg";
+import { ReactComponent as CloseIcon } from "@/icons/icon-close.svg";
 import "./sidebar.sass";
 
 type SidebarProps = {
@@ -26,17 +27,16 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
         className="close"
         onClick={() => state.setIsOpen(!state.isOpen)}
       >
-        {/*  <Icon
-          name="close"
-          src={<CloseIcon />}
-          size={{ width: "15px", height: "15px" }}
-        /> */}
+        <Icon src={<CloseIcon />} name="close" />
       </button>
       <ul>
-        {content.map((item) => (
+        {content.map((item, i) => (
           <Link to={item.url} key={item.name}>
             <li>
-              <span>{capitalize(item.name)}</span>
+              <span>
+                <strong>{`0${i}`}</strong>
+                {` ${item.name.toUpperCase()}`}
+              </span>
             </li>
           </Link>
         ))}

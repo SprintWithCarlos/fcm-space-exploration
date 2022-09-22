@@ -1,21 +1,31 @@
+@import "../../../style/custom"
 .sidebar
   // margin-inline: auto
-  width: min(100% - 2rem, 250px )
-  background-color: white
+  width: min(100%, 250px )
   display: flex
   flex-direction: column
   justify-content: flex-start
   align-items: left
-  border-right: 0.5px solid rgb(230, 227, 227)
+  // border-right: 0.5px solid rgb(230, 227, 227)
   flex: 1.5
-  padding: 1rem
+  padding: 24px
   height: 100vh
+  background: rgba(255, 255, 255, 0.04)
+  backdrop-filter: blur(40.7742px)
+  .icon
+    margin: 0
+    // margin-right: 8px
+    margin-top: 3px
+  &>*
+    background-color: unset
   // position: absolute
   // top: 50px
   // &>*
   //   margin-bottom: 1rem
   .close
-    width: 15px
+    width: 100%
+    display: flex
+    justify-content: flex-end
     svg
       fill: black
   &__row
@@ -33,11 +43,10 @@
     display: flex
     justify-content: flex-start
     align-items: center
-    font-weight: bold
     cursor: pointer
     line-height: 1.8rem
     transition: all 0.2s ease-in-out
-    margin-bottom: 0.8rem
+    margin-bottom: 36px
     &:hover
       background-color: white
       color: tomato
@@ -58,8 +67,10 @@
   ul
     display: flex
     flex-direction: column
-    margin-top: 2rem
+    margin-top: 3rem
     padding-left: 0.75rem
+    // background: none
+    // backdrop-filter: none
   .bottom
     padding: 1rem
     button
@@ -77,5 +88,5 @@
   a
     display: flex
     width: 100%
-    text-decoration: none
-    color: black
+
+    @include nav__text

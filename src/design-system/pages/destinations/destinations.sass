@@ -1,0 +1,93 @@
+@import "../../../style/custom"
+.destination
+  height: auto
+  &__header
+    display: flex
+    margin-top: 88px
+    margin-bottom: 24px
+    justify-content: center
+    width: 100%
+  section
+    height: auto
+    margin-top: 88px
+  .title__number
+    margin-right: 16px
+    font-weight: bold
+    color: rgba(255,255,255,0.25)
+    letter-spacing: 2.7px
+  picture
+    width: 170px
+    height: 170px
+    display: block
+    margin: 0 auto
+    @include slideinup-animation-short(1s)
+    position: relative
+  ul
+    position: absolute
+    list-style: none
+    display: flex
+    justify-content: center
+    gap: 16px
+    margin-bottom: 20px
+    z-index: 10
+    width: 100%
+    left: 0
+    .menu__item
+      @include nav__text
+      letter-spacing: 2.36px
+      border-bottom: 3.5px solid transparent
+      &.active
+        border-bottom: 3.5px solid white
+  .row
+    display: flex
+    flex-direction: column
+
+  .subitem
+    :first-child
+      margin-bottom: 12px
+  h3, h4
+    margin-top: 0
+    margin-bottom: 0
+  h3
+    margin-top: 40px
+  .column, .row
+    &>*
+      margin-bottom: 1.5rem
+  .description__row
+    display: flex
+    flex-direction: column
+    gap: 24px
+  @include tablet
+    &>*
+      margin: unset
+    .row
+      display: flex
+      justify-content: flex-start
+      width: 100%
+      flex-direction: row
+    picture
+      width: 300px
+      height: 300px
+      margin-bottom: 53px
+    ul
+      gap: 24px
+      margin-bottom: 32px
+    h3
+      font-size: 80px
+      height: 92px
+      @include flex-centered
+    p
+      font-size: 16px
+      width: 80%
+      margin: 0 auto
+    hr
+      width: 80%
+      margin: 32px auto
+
+    .description__row
+      margin-top: 32px
+      width: 80%
+      flex-direction: row
+      width: 100%
+      justify-content: space-evenly
+      display: flex
