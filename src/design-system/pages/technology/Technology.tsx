@@ -17,19 +17,14 @@ const Technology: React.FC<TechnologyProps> = ({ data }: TechnologyProps) => {
   const [currentItem, setCurrentItem] = useState<number>(0);
   const renderTecnology = () => (
     <div key={data[currentItem].name} className="column">
-      <div className="pic-container">
-        <picture>
-          <source
-            srcSet={data[currentItem].images.landscape}
-            type="image/jpg"
-          />
-          <source srcSet={data[currentItem].images.portrait} type="image/jpg" />
-          <img
-            src={data[currentItem].images.landscape}
-            alt={`${data[currentItem].name}pic`}
-          />
-        </picture>
-      </div>
+      <picture>
+        <source srcSet={data[currentItem].images.landscape} type="image/jpg" />
+        <source srcSet={data[currentItem].images.portrait} type="image/jpg" />
+        <img
+          src={data[currentItem].images.landscape}
+          alt={`${data[currentItem].name}pic`}
+        />
+      </picture>
 
       <ul>
         {data.map((technology: TechnologyType, i: number) => (
@@ -50,7 +45,7 @@ const Technology: React.FC<TechnologyProps> = ({ data }: TechnologyProps) => {
       </ul>
 
       <div className="subitem">
-        <div className="nav__text">the terminology...</div>
+        <div className="nav__text-small">the terminology...</div>
         <div className="name">{data[currentItem].name}</div>
       </div>
       <p>{data[currentItem].description}</p>
@@ -58,7 +53,7 @@ const Technology: React.FC<TechnologyProps> = ({ data }: TechnologyProps) => {
   );
   return (
     <Main pageName="technology">
-      <div className="row">
+      <div className="technology__header">
         <span className="title__number">03 </span>
         <span className="nav__text"> space launch 101</span>
       </div>

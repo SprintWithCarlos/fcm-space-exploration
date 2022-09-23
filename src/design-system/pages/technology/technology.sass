@@ -2,12 +2,20 @@
 .technology
   height: auto
   min-height: 100vh
+  padding: unset
+  &__header
+    display: flex
+    width: 100%
+    height: 100%
+    justify-content: center
+    align-items: center
+    text-align: center
+    margin: 0 auto 32px
   section
-    min-height: 100vh
-    height: auto
-    margin-top: 88px
+    min-height: unset
+    height: unset
     padding: unset
-    padding-top: 24px
+
   .title__number
     margin-right: 16px
     font-weight: bold
@@ -15,29 +23,24 @@
     letter-spacing: 2.7px
   hr
     color: rgba(255,255,255,0.25)
-  .pic-container
-    position: relative
-    height: 170px
-    width: 100%
+
   picture
     // display: flex
     // justify-content: center
     // align-items: flex-end
     display: block
-    margin: unset
-    margin: 0 auto !important
-    width: 100%
+
     height: 170px
-    position: absolute
-    left: 0
+    width: 100%
+    margin-bottom: 32px
 
     img
 
       height: 100% !important
       width: 100% !important
-      object-fit: contain !important
-      object-position: bottom !important
-      aspect-ratio: 1/1
+      // object-fit: contain !important
+      // object-position: bottom !important
+      // aspect-ratio: 1/1
 
   ul
     list-style: none
@@ -77,7 +80,6 @@
     margin-bottom: 0
   .column, .row
     &>*
-
       margin-bottom: 1.5rem
   .role
     font-family: $belle
@@ -89,7 +91,30 @@
     text-transform: uppercase
     font-size: 25px
   p
-    padding: 0 24px
-  .nav__text
-    font-size: 14px !important
-    letter-spacing: 2.36px !important
+    padding: 0 24px 32px 24px
+
+  .nav__text-small
+    font-size: 14px
+    letter-spacing: 2.36px
+    text-transform: uppercase
+  @include tablet
+    .technology__header
+      justify-content: flex-start
+      display: flex
+      width: 100%
+      height: 118px
+      align-items: center
+      margin-top: 32px
+      padding-left: 24px
+    picture
+      height: 310px
+      display: block
+      margin-bottom: 56px !important
+    ul
+      margin-bottom: 44px !important
+      .menu__item
+        width: 60px
+        height: 60px
+    p
+      width: 458px
+      margin: 0 auto

@@ -1,15 +1,18 @@
 @import "../../../style/custom"
 .destination
   height: auto
+  min-height: 100vh
   &__header
     display: flex
-    margin-top: 88px
-    margin-bottom: 24px
+    margin: 24px
     justify-content: center
+    align-items: center
     width: 100%
+
   section
     height: auto
-    margin-top: 88px
+    margin-top: 112px
+    padding-top: 0
   .title__number
     margin-right: 16px
     font-weight: bold
@@ -60,6 +63,8 @@
   @include tablet
     &>*
       margin: unset
+    &__header
+      height: 118px
     .row
       display: flex
       justify-content: flex-start
@@ -91,3 +96,6 @@
       width: 100%
       justify-content: space-evenly
       display: flex
+    .destination__header
+      justify-content: flex-start
+      margin-top: 32px

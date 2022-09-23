@@ -20,7 +20,7 @@ export const formatter = (currency: string, amount: string | number) => {
 
   const result = Intl.NumberFormat(undefined, {
     style: "currency",
-    currency,
+    currency
   }).format(cleanedAmount);
   return result;
 };
@@ -30,7 +30,7 @@ const desktop = 1440;
 enum Device {
   mobile = "mobile",
   tablet = "tablet",
-  desktop = "desktop",
+  desktop = "desktop"
 }
 export const getDevice = (width: number): Device => {
   if (width <= mobile) return Device.mobile;
