@@ -7,36 +7,52 @@ nav
   height: 50px
   // border-bottom: 0.5px solid rgb(230, 227, 227)
   z-index: 100
-  background-color: white
-  padding: 0 1rem
+  // padding: 0 1rem
   top: 0
   width: 100vw
-  @media screen and (min-width: $mobile +1)
+  @include tablet
+    height: 100px
+  @include desktop
     height: 100px
 
-  .navbar
+  .navbar-desktop
     display: flex
-    width: 90%
+    width: 100%
     margin: 0 auto
     justify-content: space-between
     align-items: center
     // border-bottom: 2px solid $light-gray
     height: 100px
-
+    // padding: 24px
+    @include tablet
+      display: none
+    @include mobile
+      display: none
     .logo
+      margin-left: 55px
       svg
         width: 100px
         height: auto
     .left
+      @include flex-centered
+    .middle
+      width: 100%
+      position: relative
       display: flex
-      justify-content: center
-      align-items: center
+      &:after
+        content: ""
+        width: 100%
+        position: absolute
+        left: 50px
+        height: 1px
+        top: calc(50% - 1px)
+        background-color: white
+        z-index: 2
 
     .right
       display: flex
       justify-content: space-between
       align-items: center
-      min-width: 120px
       position: relative
 
     .menu
@@ -46,30 +62,99 @@ nav
       width: 500px
       padding-bottom: 4px
       height: 100px
+      position: relative
+      padding-left: 123px
+      min-width: 776px
+      padding-right: 165px
+      @include nav__text
+      @include blurred
+
       &-item
-        border-bottom: 3.5px solid white
+        border-bottom: 3.5px solid transparent
         height: 99px
         display: flex
         align-items: center
         cursor: pointer
         &:hover
-          // border-bottom: 3.5px solid $primary-orange
-          font-weight: 600
+          border-bottom: 3.5px solid #979797
+        &.active
+          border-bottom: 3.5px solid white
       a
         text-decoration: none
+
     .avatar
       img
         width: 40px !important
         height: 40px !important
 
-    @media screen and (max-width: $mobile + 1)
+  .navbar-tablet
+    display: flex
+    width: 100%
+    margin: 0 auto
+    justify-content: space-between
+    align-items: center
+    // border-bottom: 2px solid $light-gray
+    height: 100px
+    // padding: 24px
+    @include desktop
       display: none
+    @include mobile
+      display: none
+    .logo
+      margin-left: 55px
+      svg
+        width: 100px
+        height: auto
+    .left
+      @include flex-centered
+
+    .right
+      display: flex
+      justify-content: space-between
+      align-items: center
+      position: relative
+
+    .menu
+      display: flex
+      justify-content: space-evenly
+      align-items: center
+      width: 450px
+      padding-bottom: 4px
+      height: 100px
+      position: relative
+
+      @include nav__text
+      @include blurred
+
+      &-item
+        border-bottom: 3.5px solid transparent
+        height: 99px
+        display: flex
+        align-items: center
+        cursor: pointer
+        &:hover
+          border-bottom: 3.5px solid #979797
+        &.active
+          border-bottom: 3.5px solid white
+      a
+        text-decoration: none
+
+    .avatar
+      img
+        width: 40px !important
+        height: 40px !important
 
   .navbar-mobile
     width: 100%
     justify-content: space-between
-    height: 50px
-    @media screen and (min-width: $mobile + 1)
+    margin-left: 16px
+    margin-right: 24px
+    margin-top: 24px
+    // height: 50px
+    // padding: 24px
+    @include tablet
+      display: none
+    @include desktop
       display: none
     &>*
       display: flex
@@ -77,7 +162,10 @@ nav
     svg
       height: 100%
     .right
-      justify-content: flex-end
+      width: 40px
+      height: 40px
+      align-items: center
+      justify-content: center
     .left
       gap: 1rem
     .logo

@@ -1,54 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&family=Bellefair&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap')
+*
+  background-color: transparent
+  color: white
+
 // Breakpoints
-$mobile: 415px
+$mobile: 384px
+$tablet: 768px
 $desktop: 1440px
+@mixin mobile
+  @media screen and (max-width: $mobile)
+    @content
+@mixin tablet
+  @media screen and (min-width: $mobile + 1) and (max-width: $tablet)
+    @content
+@mixin desktop
+  @media screen and (min-width: $tablet + 1)
+    @content
+@mixin flex-centered
+  display: flex
+  justify-content: center
+  align-items: center
+@mixin blurred
+  background: rgba(255, 255, 255, 0.04)
+  backdrop-filter: blur(40.7742px)
 // Colors
-$primary: hsl(230°, 35%, 7%)
-$secondary: hsl(231°, 77%, 90%)
-$light: hsl(0°, 0%, 100%)
+$primary: hsl(230deg, 35%, 7%)
+$secondary: hsl(231deg, 77%, 90%)
+$light: hsl(0deg, 0%, 100%)
 // fonts
 $barlow: 'Barlow Condensed', sans-serif
+$barlowR: 'Barlow', sans-serif
 $belle: 'Bellefair', serif
 // Styles
-.heading1
+@mixin heading1
   font-family: $belle
-  font-size: 150px
+  font-size: 80px
+  height: 100px
+  text-transform: uppercase
+  display: flex
+  align-items: center
+  margin: 16px 0
+  @include tablet
+    font-size: 150px
+  @include desktop
+    font-size: 150px
 .subheading1
   font-family: $belle
   font-size: 28px
-.heading2
+  text-transform: uppercase
+@mixin heading2
   font-family: $belle
   font-size: 100px
+  text-transform: uppercase
 .subheading2
   font-family: $barlow
   font-size: 14px
-  font-kerning: 2.35
-.heading3
+  letter-spacing: 2.35px
+  text-transform: uppercase
+@mixin heading3
   font-family: $belle
   font-size: 56px
-.heading4
+  text-transform: uppercase
+@mixin heading4
   font-family: $belle
   font-size: 32px
-.heading5
+  text-transform: uppercase
+@mixin heading5
   font-family: $barlow
   font-size: 28px
-  font-kerning: 4.75
-nav
-  &__text
-    font-family: $barlow
-    font-size: 16px
-    font-kerning: 2.7
-body
+  letter-spacing: 4.75px
+  text-transform: uppercase
+@mixin nav__text
   font-family: $barlow
-  font-size: 18px
+  font-size: 16px
+  letter-spacing: 2.7px
+  text-transform: uppercase
+body
+  font-family: $barlowR
+  font-size: 15px
+  line-height: 25px
+  text-align: center
 
 h1
-  .heading1
+  @include heading1
 h2
-  .heading2
+  @include heading2
 h3
-  .heading3
+  @include heading3
 h4
-  .heading4
+  @include heading4
 h5
-  .heading5
+  @include heading5
+main
+  width: 100%
+  display: flex
+  background-color: black
+  flex-direction: column
+  min-height: 100vh
+  height: auto
+
+section
+  width: 100%
+  height: calc(667px - 112px)
+  display: flex
+  margin-top: 112px
+  // justify-content: center
+  align-items: center
+  flex-direction: column
+  padding: 24px
+  position: relative
+  &:first-child
+    background-color: peru
+.box
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  display: flex
+.nav__text
+  @include nav__text
+@mixin slideinup-animation-long( $time)
+  animation: slidein__up-long $time ease-out forwards
+@mixin slideinup-animation-short( $time)
+  animation: slidein__up-short $time ease-out forwards
+@mixin slideinup-animation-shorter( $time)
+  animation: slidein__up-shorter $time ease-out forwards
+@mixin slideinup-animation-planet( $time)
+  animation: slidein__up-planet $time ease-out forwards

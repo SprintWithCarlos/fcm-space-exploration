@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "@/design-system/organisms/sidebar/Sidebar";
 import "./drawer.sass";
 import Icon from "@/design-system/atoms/icon/Icon";
+import { ReactComponent as BurgerIcon } from "@/icons/icon-hamburger.svg";
 
 type DrawerProps = {
   position: string;
@@ -21,7 +22,11 @@ const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
         onClick={() => setIsOpen(!isOpen)}
         data-testid="menu"
       >
-        {/* <Icon name="burger" src={<BurgerIcon />} /> */}
+        <Icon
+          name="burger"
+          src={<BurgerIcon />}
+          size={{ width: "24px", height: "21px" }}
+        />
       </button>
       <div
         data-testid="container"

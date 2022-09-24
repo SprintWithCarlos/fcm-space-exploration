@@ -1,0 +1,324 @@
+@import "../../../style/custom"
+.crew
+
+  height: auto
+  min-height: 100vh
+  position: relative
+  width: 100%
+  padding-top: 0
+  section
+    margin-top: 58px
+  &__header
+    padding: unset
+    margin: unset
+    margin-top: 24px
+    margin-bottom: 60px
+  // section
+  //   min-height: 100vh
+  //   height: auto
+  //   margin-top: 110px
+  .title__number
+    margin-right: 16px
+    font-weight: bold
+    color: rgba(255,255,255,0.25)
+    letter-spacing: 2.7px
+  hr
+    color: rgba(255,255,255,0.25)
+    margin-bottom: 32px
+  picture
+    // display: flex
+    // justify-content: center
+    // align-items: flex-end
+    display: block
+    margin: unset
+    margin: 0 auto
+    width: 280px
+    height: 290px
+
+    img
+
+      height: 100%
+      width: 100%
+      object-fit: contain
+      object-position: bottom
+      aspect-ratio: 1/1
+
+  ul
+    list-style: none
+    display: flex
+    justify-content: center
+    gap: 4px
+    margin-bottom: 32px
+    .circle
+      position: relative
+      width: 30px
+      height: 30px
+      display: flex
+
+    .menu__item
+      width: 100%
+      height: auto
+      &:after
+        content: ""
+        position: absolute
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        background-color: rgba(255,255,255,0.25)
+        top: calc(50% - 5px)
+        left: calc(50% - 5px)
+        transition: 0.3s all ease-in-out
+        @include desktop
+          left: 0
+      &.active
+        &:after
+          content: ""
+          position: absolute
+          width: 14px
+          height: 14px
+          border-radius: 50%
+          background-color: #fff
+          top: calc(50% - 5px)
+          left: calc(50% - 5px)
+          @include desktop
+            left: 0
+      &:hover
+        &:after
+          content: ""
+          position: absolute
+          width: 14px
+          height: 14px
+          border-radius: 50%
+          background-color: #fff
+          top: calc(50% - 5px)
+          left: calc(50% - 5px)
+          @include desktop
+            left: 0
+
+  .subitem
+    :first-child
+      margin-bottom: 8px
+  h3, h4
+    margin-top: 0
+    margin-bottom: 0
+  .column, .row
+    &>*
+      margin-bottom: 1.5rem
+  .role
+    font-family: $belle
+    text-transform: uppercase
+    font-size: 16px
+    color: rgba(255,255,255,0.5)
+  .name
+    font-family: $belle
+    text-transform: uppercase
+    font-size: 25px
+    margin-bottom: 16px
+  #block1
+    margin-bottom: 0
+  @include tablet
+    padding-bottom: 0
+    height: unset
+    min-height: unset
+
+    section
+      margin-top: 112px
+      height: calc(100vh - 112px)
+    #block1
+      display: flex
+      order: 2
+      width: 100%
+
+      justify-content: center
+    #block2
+      display: flex
+      order: 1
+      flex-direction: column
+
+    &__header
+      display: flex
+      justify-content: flex-start
+      width: 100%
+      height: unset
+      align-items: center
+      margin-top: 32px
+      margin-left: 32px
+    &__container
+      display: block
+      position: relative
+
+      width: 100%
+      overflow: hidden
+
+    &__column
+      max-width: 460px
+      display: flex
+      justify-content: flex-end
+      height: calc(100vh - 112px)
+      margin: 0 auto
+      overflow: hidden
+    .subitem
+      :first-child
+        margin-bottom: 24px
+    hr
+      display: none
+    #first
+
+      margin-bottom: unset
+      order: 3
+    #second
+
+      order: 2
+    #third
+
+      order: 1
+      max-width: 82%
+      margin: 0 auto
+      // margin-bottom: 24px
+    p
+      margin: unset
+      margin-top: 1rem
+      font-size: 16px
+      line-height: 28px
+      // height: 112px
+      display: flex
+      margin-bottom: 16px
+    picture
+      width: auto
+      display: block
+      height: 552px
+      overflow: hidden
+      img
+
+        overflow: hidden
+        height: 100%
+        width: 100%
+        object-fit: contain
+        object-position: bottom
+        aspect-ratio: 1/1
+        object-fit: contain
+        object-position: bottom
+    .role
+      font-size: 24px
+      margin-bottom: 24px
+    .name
+      font-size: 40px
+      margin-bottom: 16px
+
+    ul
+      margin-bottom: 0
+      // margin-bottom: 40px
+  @include desktop
+
+    height: 100vh
+    margin: unset
+    min-height: unset
+    padding-bottom: 0
+    &>*
+      text-align: left
+    section
+      margin: 0 auto
+      padding-top: 0
+      width: 80%
+      margin-top: 64px
+      // height: calc(100vh - 112px)
+
+    &__header
+      width: 100%
+      display: flex
+      justify-content: flex-start
+      margin: 64px
+    .column
+      height: 100%
+      flex-direction: row
+      gap: 8px
+      align-items: center
+    picture
+      flex: 1
+      height: 100%
+      width: 100%
+      animation: 1s slidein__right ease-in-out
+    #block
+      flex: 1
+      width: 100%
+      justify-content: center
+      align-items: flex-start
+      display: flex
+      flex-direction: column
+    ul
+      position: absolute
+      bottom: 60px
+      left: 0
+      justify-content: flex-start
+
+    h3
+      height: unset
+    hr
+      display: none
+
+    .description__row
+      flex-direction: row
+    #block1
+      // height: 232px
+      margin-bottom: 0
+      flex: 1
+      order: 2
+      height: 100%
+      align-items: flex-start
+
+    #block2
+      margin: unset
+      // height: 532px
+      // gap: 32px
+      order: 1
+      justify-content: space-between
+      flex: 1
+      display: flex
+      height: 80%
+      // flex-direction: column-reverse
+    #first
+      display: block
+      height: 100%
+
+      position: relative
+    .role
+      font-size: 32px
+      margin-bottom: 15px !important
+
+    .name
+      font-size: 54px
+      height: unset
+      line-height: 64px
+      margin-bottom: 27px
+      white-space: nowrap
+    p
+      font-size: 18px
+      line-height: 32px
+      margin-bottom: 120px
+    #second
+      display: flex
+      justify-content: flex-start
+    picture
+      position: absolute
+
+      top: -100px
+      display: flex
+      width: 100%
+      height: 100%
+      // right: -250px
+      left: 0
+      justify-content: center
+      img
+        width: 100%
+        height: 120%
+
+    .crew__container
+      position: relative
+      height: 100%
+    .nav__text, .title__number
+      font-size: 28px
+    #third
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: 300px

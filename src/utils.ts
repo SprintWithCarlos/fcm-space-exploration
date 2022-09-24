@@ -24,5 +24,17 @@ export const formatter = (currency: string, amount: string | number) => {
   }).format(cleanedAmount);
   return result;
 };
-const test1 = formatter("GBP", "125,00");
-test1;
+const mobile = 375;
+const tablet = 768;
+const desktop = 1440;
+enum Device {
+  mobile = "mobile",
+  tablet = "tablet",
+  desktop = "desktop"
+}
+export const getDevice = (width: number): Device => {
+  if (width <= mobile) return Device.mobile;
+  if (width > mobile && width < tablet) return Device.tablet;
+  if (width >= tablet) return Device.desktop;
+  throw new Error();
+};

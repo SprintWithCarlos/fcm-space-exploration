@@ -1,108 +1,91 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-/* import { ReactComponent as Logo } from "@/assets/logo.svg";
-import { ReactComponent as CartIcon } from "@/assets/icon-cart.svg"; */
+import { ReactComponent as Logo } from "@/icons/logo.svg";
+// import { ReactComponent as CartIcon } from "@/assets/icon-cart.svg";
 import "./navbar.sass";
-import Avatar from "@/design-system/atoms/avatar/Avatar";
+
 import Drawer from "@/design-system/molecules/drawer/Drawer";
 import Icon from "@/design-system/atoms/icon/Icon";
 import CartModal from "../cartModal/CartModal";
-import { CartContext } from "@/state/cartContext";
+import data from "@/data.json";
 import { capitalize } from "@/utils";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { cart } = useContext(CartContext);
+  const routes = Object.keys(data).map((itemName: string) => ({
+    name: itemName,
+    url: `/${itemName}`,
+  }));
+  const content = [{ name: "home", url: "/" }, ...routes];
 
-  const content = [
-    { name: "collections", url: "/collections" },
-    { name: "men", url: "/men" },
-    { name: "women", url: "/women" },
-    { name: "about", url: "/about" },
-    { name: "contact", url: "/contact" },
-  ];
   return (
     <nav data-testid="navbar" className="navbar">
       <div className="navbar-mobile">
         <div className="left">
-          <Drawer position="left" content={content} />
           <span className="logo">
-            {/*   <NavLink to="/">
-              <Logo />
-            </NavLink> */}
+            <NavLink to="/">
+              <Icon
+                src={<Logo />}
+                name="logo"
+                size={{ width: "40px", height: "40px" }}
+              />
+            </NavLink>
           </span>
         </div>
         <div className="right">
-          <button
-            type="button"
-            data-testid="openCartMobile"
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            {/*  <Icon
-              counter={
-                cart.quantity && cart.quantity > 0 ? cart.quantity : undefined
-              }
-              name="cart-mobile"
-              src={<CartIcon />}
-              size={{ height: "auto", width: "22px" }}
-            /> */}
-          </button>
-          {isOpen && <CartModal />}
-          <div className="avatar">
-            <Avatar
-              src="/image-avatar.png"
-              className="round"
-              alt="avatar"
-              size={{ width: "20", height: "20" }}
-            />
-          </div>
+          <Drawer position="right" content={content} />
         </div>
       </div>
-      <div className="navbar">
+      <div className="navbar-tablet">
         <span className="left">
           <span className="logo">
-            {/*   <NavLink to="/">
-              <Logo />
-            </NavLink> */}
+            <NavLink to="/">
+              <Icon
+                src={<Logo />}
+                name="logo"
+                size={{ width: "40px", height: "40px" }}
+              />
+            </NavLink>
           </span>
+        </span>
+
+        <span className="right">
           <span className="menu">
-            {content.map((item) => (
+            {content.map((item, i) => (
               <NavLink to={item.url} className="menu-item" key={item.url}>
-                {capitalize(item.name)}
+                <span>{` ${item.name}`}</span>
               </NavLink>
             ))}
           </span>
         </span>
+      </div>
+      <div className="navbar-desktop">
+        <span className="left">
+          <span className="logo">
+            <NavLink to="/">
+              <Icon
+                src={<Logo />}
+                name="logo"
+                size={{ width: "40px", height: "40px" }}
+              />
+            </NavLink>
+          </span>
+        </span>
+        <span className="middle" />
         <span className="right">
-          <button
-            type="button"
-            data-testid="openCartDesktop"
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            {/*  <Icon
-              counter={
-                cart.quantity && cart.quantity > 0 ? cart.quantity : undefined
-              }
-              name="cart-desktop"
-              src={<CartIcon />}
-              size={{ height: "auto", width: "22px" }}
-            /> */}
-          </button>
-          {isOpen && <CartModal />}
-          <div className="avatar">
-            <Avatar
-              src="/image-avatar.png"
-              className="round"
-              alt="avatar"
-              size={{ width: "20", height: "20" }}
-            />
-          </div>
+          <span className="menu">
+            {content.map((item, i) => (
+              <NavLink to={item.url} className="menu-item" key={item.url}>
+                <span>
+                  <strong>{`0${i}`}</strong>
+                  {` ${item.name}`}
+                </span>
+              </NavLink>
+            ))}
+          </span>
         </span>
       </div>
     </nav>
