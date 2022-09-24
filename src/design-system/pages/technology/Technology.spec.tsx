@@ -1,14 +1,24 @@
 import { render, screen } from "@testing-library/react";
-import Technology from "./Technology";
+import { BrowserRouter } from "react-router-dom";
+import Technology, { TechnologyType } from "./Technology";
 
+const mockTechnology: TechnologyType = {
+  name: "",
+  images: {
+    portrait: "",
+    landscape: "",
+  },
+  description: "",
+};
 describe("Technology", () => {
   beforeEach(() => {
-    render(<Technology />);
+    render(<Technology data={[{ ...mockTechnology }]} />, {
+      wrapper: BrowserRouter,
+    });
   });
 
   test("renders ", async () => {
-    const technologyComponent = screen.queryByTestId(/technology/i);
-    expect(technologyComponent).toBeInTheDocument();
+    const technologyComponent = screen.queryAllByTestId(/technology/i);
+    technologyComponent.map((elem) => expect(elem).toBeInTheDocument());
   });
 });
-

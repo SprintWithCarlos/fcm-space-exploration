@@ -11,11 +11,12 @@
     align-items: center
     text-align: center
     margin: 0 auto 32px
+    margin-top: 24px
   section
     min-height: unset
     height: unset
     padding: unset
-
+    margin-top: 58px
   .title__number
     margin-right: 16px
     font-weight: bold
@@ -36,8 +37,8 @@
 
     img
 
-      height: 100% !important
-      width: 100% !important
+      height: 100%
+      width: 100%
       // object-fit: contain !important
       // object-position: bottom !important
       // aspect-ratio: 1/1
@@ -73,6 +74,7 @@
         background-color: #fff
 
   .subitem
+    margin-bottom: 16px
     :first-child
       margin-bottom: 8px
   h3, h4
@@ -104,17 +106,153 @@
       width: 100%
       height: 118px
       align-items: center
-      margin-top: 32px
-      padding-left: 24px
+      margin-top: 40px
+      padding-left: 40px
     picture
       height: 310px
       display: block
       margin-bottom: 56px !important
     ul
       margin-bottom: 44px !important
+      gap: 16px
       .menu__item
         width: 60px
         height: 60px
     p
       width: 458px
       margin: 0 auto
+  @include desktop
+    position: unset
+    height: 100vh
+    margin: unset
+    min-height: unset
+    padding-bottom: 0
+    position: relative
+    &>*
+      text-align: left
+    section
+      margin: 0 auto
+      padding-top: 0
+      // width: 80%
+      margin-top: 64px
+      // height: calc(100vh - 112px)
+
+    &__header
+      width: 80%
+      display: flex
+      justify-content: flex-start
+      margin: 64px
+      padding-left: 24px
+    .column
+      width: 80%
+      height: 100%
+      flex-direction: row
+      gap: 8px
+      align-items: center
+
+      // position: relative
+      margin: 0 auto
+      margin-top: 90px
+      padding-left: 24px
+
+    #block
+      // flex: 1
+      margin-left: 140px
+      width: 470px
+      height: 300px
+      align-items: flex-start
+      display: flex
+      flex-direction: column
+
+    ul
+      position: absolute
+      justify-content: center
+      flex-direction: column
+      align-items: flex-start
+      gap: 32px
+
+      .menu__item
+        width: 80px
+        height: 80px
+    h3
+      height: unset
+    hr
+      display: none
+
+    .description__row
+      flex-direction: row
+    #block1
+      // height: 232px
+      margin-bottom: 0
+      flex: 1
+      order: 2
+      height: 100%
+      align-items: flex-start
+
+    #block2
+      margin: unset
+      // height: 532px
+      // gap: 32px
+      order: 1
+      justify-content: space-between
+      flex: 1
+      display: flex
+      height: 80%
+      // flex-direction: column-reverse
+    #first
+      display: block
+      height: 100%
+
+    .role
+      font-size: 32px
+      margin-bottom: 15px !important
+
+    .name
+      font-size: 54px
+      height: unset
+      line-height: 64px
+      margin-bottom: 27px
+      white-space: nowrap
+    p
+      font-size: 18px
+      line-height: 32px
+      margin: unset
+      padding: unset
+      // margin-bottom: 120px
+    #second
+      display: flex
+      justify-content: flex-start
+    picture
+      position: absolute
+
+      // top: -100px
+      // display: flex
+      // width: 100%
+      // height: 100%
+      // right: -250px
+      right: 0
+      justify-content: center
+
+      height: 415px
+      width: 407px
+      overflow: hidden
+      // animation: 1s slidein__right ease-in-out
+      img
+        // aspect-ratio: 515/527
+        object-fit: contain
+        // object-position: top
+
+      //   width: 100%
+      //   height: 100%
+
+    &__container
+      // position: relative
+      height: 100%
+
+    .nav__text, .title__number
+      font-size: 28px
+    #third
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: 300px

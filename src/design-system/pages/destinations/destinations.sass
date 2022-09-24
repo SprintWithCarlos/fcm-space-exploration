@@ -1,7 +1,8 @@
 @import "../../../style/custom"
 .destination
-  height: auto
+  height: 100%
   min-height: 100vh
+
   &__header
     display: flex
     margin: 24px
@@ -10,8 +11,9 @@
     width: 100%
 
   section
-    height: auto
-    margin-top: 112px
+    height: 100%
+    // margin-top: 112px
+    margin-top: 58px
     padding-top: 0
   .title__number
     margin-right: 16px
@@ -52,24 +54,42 @@
     margin-top: 0
     margin-bottom: 0
   h3
+    line-height: 64px
     margin-top: 40px
   .column, .row
     &>*
+
       margin-bottom: 1.5rem
   .description__row
     display: flex
     flex-direction: column
     gap: 24px
+    margin-top: 32px
+  p
+    margin-bottom: 32px
+  .nav__text-small
+    font-size: 14px
+    letter-spacing: 2.36px
+    text-transform: uppercase
   @include tablet
+    min-height: unset
+    height: unset
+    section
+      margin-top: 112px
+      height: calc(100vh - 112px)
     &>*
       margin: unset
+      // border: red solid 1px
     &__header
-      height: 118px
-    .row
-      display: flex
-      justify-content: flex-start
-      width: 100%
-      flex-direction: row
+      // height: 118px
+      margin-left: 40px
+      margin-bottom: 32px
+
+      .row
+        display: flex
+        justify-content: flex-start
+        width: 100%
+        flex-direction: row
     picture
       width: 300px
       height: 300px
@@ -99,3 +119,83 @@
     .destination__header
       justify-content: flex-start
       margin-top: 32px
+    .column
+      height: 100%
+      padding-bottom: 0
+  @include desktop
+    // width: 1440px
+    #block1
+      flex: 1
+    picture
+      margin: unset
+      height: 100%
+      width: 100%
+      @include slideinup-animation-planet(1s)
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: contain
+    section
+
+      min-height: unset
+      padding-top: 0
+      width: 80%
+      margin: 0 auto
+      margin-top: 64px
+
+    &__header
+      justify-content: flex-start
+      margin: 64px 0
+    .column
+      margin: 0 auto
+      flex-direction: row
+      justify-content: space-between
+      gap: 145px
+
+    #block2
+      flex: 1
+      width: 100%
+
+      justify-content: flex-start
+      align-items: flex-start
+      display: flex
+      flex-direction: column
+      &>*
+        margin: unset
+        padding: unset
+        height: unset
+
+      .menu
+        height: auto
+      ul
+        margin: unset
+        position: unset
+        margin-bottom: 36px
+      h3
+        height: unset
+        margin-bottom: 14px
+      p
+        margin-bottom: 54px
+        height: 128px
+      .subitem
+        width: 100%
+        flex: 1
+      h4
+        font-size: 28px
+        font-weight: 400
+      hr
+        display: block
+        width: 100%
+        color: #383B4B !important
+        margin-bottom: 28px
+      .description__row
+        flex-direction: row
+        gap: 80px
+        width: 100%
+      p, .nav__text, h4
+        text-align: left
+    .nav__text, .title__number
+      font-size: 28px
+    .nav__text-small
+      text-align: left

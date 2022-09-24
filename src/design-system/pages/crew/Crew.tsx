@@ -2,7 +2,7 @@ import { useState } from "react";
 import Main from "@/design-system/templates/main/Main";
 import "./crew.sass";
 
-type CrewType = {
+export type CrewType = {
   name: string;
   images: {
     png: string;
@@ -51,6 +51,7 @@ const Crew: React.FC<CrewProps> = ({ data }: CrewProps) => {
             ))}
           </ul>
         </div>
+
         <div id="third">
           <div className="subitem">
             <div className="role">{data[currentItem].role}</div>

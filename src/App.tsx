@@ -1,6 +1,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable jsx-a11y/aria-role */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./design-system/pages/home/Home";
 import NoMatch from "./design-system/pages/noMatch/NoMatch";
 import data from "@/data.json";
@@ -18,6 +19,9 @@ function App() {
     Object.keys(data).map((itemName: string, i: number) => (
       <Route path={itemName} element={elements[i]} key={itemName} />
     ));
+  useEffect(() => {
+    document.title = "Frontend Mentor | Space tourism website";
+  }, []);
   return (
     <div data-testid="app" role="app" className={`app `}>
       <BrowserRouter>

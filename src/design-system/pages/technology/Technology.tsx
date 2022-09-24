@@ -2,7 +2,7 @@ import { useState } from "react";
 import Main from "@/design-system/templates/main/Main";
 import "./technology.sass";
 
-type TechnologyType = {
+export type TechnologyType = {
   name: string;
   images: {
     portrait: string;
@@ -18,8 +18,16 @@ const Technology: React.FC<TechnologyProps> = ({ data }: TechnologyProps) => {
   const renderTecnology = () => (
     <div key={data[currentItem].name} className="column">
       <picture>
-        <source srcSet={data[currentItem].images.landscape} type="image/jpg" />
-        <source srcSet={data[currentItem].images.portrait} type="image/jpg" />
+        <source
+          media="(max-width: 768px)"
+          srcSet={data[currentItem].images.landscape}
+          type="image/jpg"
+        />
+        <source
+          media="(min-width: 769px)"
+          srcSet={data[currentItem].images.portrait}
+          type="image/jpg"
+        />
         <img
           src={data[currentItem].images.landscape}
           alt={`${data[currentItem].name}pic`}
@@ -44,11 +52,13 @@ const Technology: React.FC<TechnologyProps> = ({ data }: TechnologyProps) => {
         ))}
       </ul>
 
-      <div className="subitem">
-        <div className="nav__text-small">the terminology...</div>
-        <div className="name">{data[currentItem].name}</div>
+      <div id="block">
+        <div className="subitem">
+          <div className="nav__text-small">the terminology...</div>
+          <div className="name">{data[currentItem].name}</div>
+        </div>
+        <p>{data[currentItem].description}</p>
       </div>
-      <p>{data[currentItem].description}</p>
     </div>
   );
   return (

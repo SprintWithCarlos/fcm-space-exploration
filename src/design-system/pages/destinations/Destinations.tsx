@@ -3,7 +3,7 @@ import { useState } from "react";
 import Main from "@/design-system/templates/main/Main";
 import "./destinations.sass";
 
-type DestinationType = {
+export type DestinationType = {
   name: string;
   images: { png: string; webp: string };
   description: string;
@@ -19,41 +19,46 @@ const Destinations: React.FC<DestinationsProps> = ({
   const [currentItem, setCurrentItem] = useState<number>(0);
   const renderDestination = () => (
     <div key={data[currentItem].name} className="column">
-      <picture>
-        <source srcSet={data[currentItem].images.webp} type="image/webp" />
-        <source srcSet={data[currentItem].images.png} type="image/png" />
-        <img
-          src={data[currentItem].images.png}
-          alt={`${data[currentItem].name}pic`}
-        />
-      </picture>
-
-      <div className="menu">
-        <ul>
-          {data.map((destination: DestinationType, i: number) => (
-            <li
-              key={destination.name}
-              className={currentItem === i ? "menu__item active" : "menu__item"}
-            >
-              <button type="button" onClick={() => setCurrentItem(i)}>
-                {destination.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+      <div id="block1">
+        <picture>
+          <source srcSet={data[currentItem].images.webp} type="image/webp" />
+          <source srcSet={data[currentItem].images.png} type="image/png" />
+          <img
+            src={data[currentItem].images.png}
+            alt={`${data[currentItem].name}pic`}
+          />
+        </picture>
       </div>
-      <h3>{data[currentItem].name}</h3>
-      <p>{data[currentItem].description}</p>
-      <hr />
-      <div className="description__row">
-        <span className="subitem">
-          <div className="nav__text">avg. distance</div>
-          <h4>{data[currentItem].distance}</h4>
-        </span>
-        <span className="subitem">
-          <div className="nav__text">est. travel time</div>
-          <h4>{data[currentItem].travel}</h4>
-        </span>
+      <div id="block2">
+        <div className="menu">
+          <ul>
+            {data.map((destination: DestinationType, i: number) => (
+              <li
+                key={destination.name}
+                className={
+                  currentItem === i ? "menu__item active" : "menu__item"
+                }
+              >
+                <button type="button" onClick={() => setCurrentItem(i)}>
+                  {destination.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <h3>{data[currentItem].name}</h3>
+        <p>{data[currentItem].description}</p>
+        <hr />
+        <div className="description__row">
+          <span className="subitem">
+            <div className="nav__text-small">avg. distance</div>
+            <h4>{data[currentItem].distance}</h4>
+          </span>
+          <span className="subitem">
+            <div className="nav__text-small">est. travel time</div>
+            <h4>{data[currentItem].travel}</h4>
+          </span>
+        </div>
       </div>
     </div>
   );

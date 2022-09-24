@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable implicit-arrow-linebreak */
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Icon from "@/design-system/atoms/icon/Icon";
-import { capitalize } from "@/utils";
 import { ReactComponent as CloseIcon } from "@/icons/icon-close.svg";
 import "./sidebar.sass";
 
@@ -18,7 +17,7 @@ type SidebarProps = {
 };
 const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
   const { content, state } = props;
-
+  const location = useLocation();
   return (
     <div data-testid="sidebar" className="sidebar">
       <button
@@ -30,16 +29,28 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
         <Icon src={<CloseIcon />} name="close" />
       </button>
       <ul>
-        {content.map((item, i) => (
-          <Link to={item.url} key={item.name}>
-            <li>
-              <span>
-                <strong>{`0${i}`}</strong>
-                {` ${item.name.toUpperCase()}`}
-              </span>
-            </li>
-          </Link>
-        ))}
+        {content.map((item, i) => {
+          const defineActive = (): boolean => {
+            let name: string;
+            if (location.pathname === "/") {
+              name = "home";
+            } else {
+              name = location.pathname.slice(1);
+            }
+            return name === item.name;
+          };
+
+          return (
+            <Link to={item.url} key={item.name}>
+              <li className={defineActive() ? "active" : ""}>
+                <span>
+                  <strong>{`0${i}`}</strong>
+                  {` ${item.name.toUpperCase()}`}
+                </span>
+              </li>
+            </Link>
+          );
+        })}
       </ul>
     </div>
   );
