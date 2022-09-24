@@ -37,7 +37,11 @@ const Crew: React.FC<CrewProps> = ({ data }: CrewProps) => {
             {data.map((crew: CrewType, i: number) => (
               <button
                 type="button"
-                onClick={() => setCurrentItem(i)}
+                data-testid={`selectCrewMember-${i}`}
+                onClick={() => {
+                  console.log("button clicked!");
+                  setCurrentItem(i);
+                }}
                 className="circle"
                 key={crew.name}
               >
@@ -55,7 +59,9 @@ const Crew: React.FC<CrewProps> = ({ data }: CrewProps) => {
         <div id="third">
           <div className="subitem">
             <div className="role">{data[currentItem].role}</div>
-            <div className="name">{data[currentItem].name}</div>
+            <div className="name" data-testid="cm-name">
+              {data[currentItem].name}
+            </div>
           </div>
           <p>{data[currentItem].bio}</p>
         </div>
