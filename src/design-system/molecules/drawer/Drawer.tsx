@@ -21,6 +21,7 @@ const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
         className="menu"
         onClick={() => setIsOpen(!isOpen)}
         data-testid="menu"
+        aria-label="open_menu"
       >
         <Icon
           name="burger"

@@ -51,7 +51,8 @@
     "svgo": "^2.8.0",
     "uuid": "^8.3.2",
     "vite": "^2.9.9",
-    "vite-plugin-svgr": "^2.2.1"
+    "vite-plugin-svgr": "^2.2.1",
+    "vite-plugin-react-remove-attributes": "^1.0.3"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.18.6",

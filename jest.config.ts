@@ -15,5 +15,13 @@ export default async (): Promise<Config.InitialOptions> => ({
     "^@/(.*)$": "<rootDir>/src/$1",
     "^d3": "<rootDir>/node_modules/d3/dist/d3.min.js"
   },
-  transformIgnorePatterns: ["/node_modules/(?!(^d3)/)"]
+  transformIgnorePatterns: ["/node_modules/(?!(^d3)/)"],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: -10
+    }
+  }
 });

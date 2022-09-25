@@ -25,6 +25,7 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
         data-testid="draw-c"
         className="close"
         onClick={() => state.setIsOpen(!state.isOpen)}
+        aria-label="close menu"
       >
         <Icon src={<CloseIcon />} name="close" />
       </button>
@@ -41,14 +42,14 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
           };
 
           return (
-            <Link to={item.url} key={item.name}>
-              <li className={defineActive() ? "active" : ""}>
+            <li className={defineActive() ? "active" : ""}>
+              <Link to={item.url} key={item.name}>
                 <span>
                   <strong>{`0${i}`}</strong>
                   {` ${item.name.toUpperCase()}`}
                 </span>
-              </li>
-            </Link>
+              </Link>
+            </li>
           );
         })}
       </ul>

@@ -1,17 +1,16 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "@/icons/logo.svg";
-// import { ReactComponent as CartIcon } from "@/assets/icon-cart.svg";
+
 import "./navbar.sass";
 
 import Drawer from "@/design-system/molecules/drawer/Drawer";
 import Icon from "@/design-system/atoms/icon/Icon";
-import CartModal from "../cartModal/CartModal";
+
 import data from "@/data.json";
-import { capitalize } from "@/utils";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,7 +25,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-mobile">
         <div className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"
@@ -42,7 +41,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-tablet">
         <span className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"
@@ -65,7 +64,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-desktop">
         <span className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"
