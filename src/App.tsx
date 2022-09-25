@@ -23,15 +23,13 @@ function App() {
     document.title = "Frontend Mentor | Space tourism website";
   }, []);
   return (
-    <div data-testid="app" role="app" className={`app `}>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NoMatch />} />
-          {customRoutes()}
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="*" element={<NoMatch />} />
+        {customRoutes()}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

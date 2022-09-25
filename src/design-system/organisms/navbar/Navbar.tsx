@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-mobile">
         <div className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-tablet">
         <span className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-desktop">
         <span className="left">
           <span className="logo">
-            <NavLink to="/">
+            <NavLink to="/" aria-label="Back to home">
               <Icon
                 src={<Logo />}
                 name="logo"

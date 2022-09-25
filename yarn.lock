@@ -7696,6 +7696,11 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vite-plugin-react-remove-attributes@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-react-remove-attributes/-/vite-plugin-react-remove-attributes-1.0.3.tgz#ffa0a3bc61cc20d15fcbe37c6a361b320a4f5424"
+  integrity sha512-f+ox+GFeqyBHzOe94Tcf1knFXEYWMhOGH04glIZRoXoIXQJD23Z1KFgQ7/JwOoLydsvQTlGzUJ/BpLeL7lh2LQ==
+
 vite-plugin-svgr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/vite-plugin-svgr/-/vite-plugin-svgr-2.2.1.tgz#6e1132a3b66f71e1d69e8c5fe989393260184ac3"
