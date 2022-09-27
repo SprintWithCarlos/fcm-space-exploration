@@ -1,0 +1,199 @@
+@import "../../../style/custom"
+.slider
+  display: block
+  // width: 100vw
+  // height: 100vh
+  width: 100vw
+  height: auto
+  section
+    min-height: unset
+    height: 300px
+    width: 400px
+    padding: unset
+    margin-top: 58px
+  .title__number
+    margin-right: 16px
+    font-weight: bold
+    color: rgba(255,255,255,0.25)
+    letter-spacing: 2.7px
+  hr
+    color: rgba(255,255,255,0.25)
+  &-window
+    display: flex
+    flex-direction: row
+    height: auto
+    min-height: 170px
+    width: 100vw
+    justify-content: center
+    align-items: center
+    // border: 5px green solid
+    position: relative
+    overflow-x: scroll
+    overflow-y: hidden
+    scroll-snap-type: x mandatory
+    margin-bottom: 2rem
+    // outline: 5px solid yellow
+  .pic-strip
+    outline: 5px solid blue
+    flex-direction: row
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    width: auto
+    height: 100%
+    justify-content: center
+    align-items: center
+    // background-color: violet
+
+  picture
+    // outline: 5px solid crimson
+    width: 100vw
+
+    height: 100%
+
+    scroll-snap-align: start
+
+    img
+
+      height: 100%
+      width: 100%
+      object-fit: contain
+      object-position: center
+
+      // aspect-ratio: 375/170
+
+  #slider-controls
+    list-style: none
+    display: flex
+    justify-content: center
+    gap: 12px
+    margin-bottom: 20px
+
+    button
+      width: 40px
+      height: 40px
+      // width: 100%
+      // height: auto
+      display: flex
+      justify-content: center
+      align-items: center
+
+      border-radius: 50%
+      border: 1px solid rgba(255,255,255,0.25)
+      background-color: transparent
+      transition: 0.3s all ease-in-out
+      .circle
+        position: relative
+      &.active
+        border-radius: 50%
+        background-color: #fff
+        color: blue
+      &:hover
+        color: blue
+        background-color: #fff
+
+  .subitem
+    margin-bottom: 16px
+    :first-child
+      margin-bottom: 8px
+  h3, h4
+    margin-top: 0
+    margin-bottom: 0
+  .column, .row
+    &>*
+      margin-bottom: 1.5rem
+  // .column
+  //   width: 100%
+  //   height: 100%
+  .role
+    font-family: sans-serif
+    text-transform: uppercase
+    font-size: 16px
+    color: rgba(255,255,255,0.5)
+  .name
+    font-family: sans-serif
+    text-transform: uppercase
+    font-size: 25px
+  p
+    padding: 0 24px 32px 24px
+
+  .nav__text-small
+    font-size: 14px
+    letter-spacing: 2.36px
+    text-transform: uppercase
+  @include tablet
+    .technology__header
+      justify-content: flex-start
+      display: flex
+      width: 100%
+      height: 118px
+      align-items: center
+      margin-top: 40px
+      padding-left: 40px
+    .slider-window
+      width: 100vw
+      height: auto
+      min-height: 310px
+      // border: 5px solid orange
+    picture
+      height: 310px
+      display: block
+      margin-bottom: 56px !important
+    #slider-controls
+      margin-bottom: 44px !important
+      gap: 16px
+      button
+        width: 60px
+        height: 60px
+    p
+      width: 458px
+      margin: 0 auto
+  // @include desktop
+  //   // display: flex
+  //   // width: 80%
+  //   // // height: 450px
+  //   // height: 100%
+  //   max-width: 1440px
+  //   outline: solid 5px rebeccapurple
+  //   height: 900px
+  //   position: absolute
+  //   display: flex
+  //   flex-direction: row-reverse
+  //   align-items: center
+  //   justify-content: space-between
+  //   .column
+  //     width: 90%
+  //     // position: absolute
+  //   // flex-direction: row-reverse
+  //     // z-index: 10
+  //     right: 0
+  //   //   // background-color: violet
+  //   // // top: calc(100% - (450px / 2) )
+  //   .slider-window
+  //     outline: solid 5px yellow
+  //     width: 100%
+  //     height: auto
+  //     min-width: 500px
+  //     min-height: 500px
+  //     display: flex
+  //   //   border: yellow 5px solid
+  //   .pic-strip
+  //     outline: solid 10px blue
+  //     position: unset
+  //   //     border: 5px blue solid
+  //     min-width: 1600px
+  //     width: 100%
+  //     height: 100%
+  //     min-height: 500px
+  //   //     display: block
+
+  //   picture
+  //     outline: solid 15px crimson
+  //     height: 500px
+  //     width: 500px
+  //   //       border: crimson 5px solid
+  //     img
+  //       height: 100%
+  //       width: 100%
+  //       object-fit: contain

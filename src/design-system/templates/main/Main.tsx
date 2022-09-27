@@ -21,10 +21,12 @@ const Main: React.FC<MainProps> = ({ pageName, children }: MainProps) => {
         )}.jpg) no-repeat center / cover, #000`,
       }}
     >
-      <Navbar />
-      <section className={pageName} data-testid={pageName}>
-        {children}
-      </section>
+      <div className="layout">
+        <Navbar />
+        <section className={pageName} data-testid={pageName}>
+          {children}
+        </section>
+      </div>
     </main>
   );
 };

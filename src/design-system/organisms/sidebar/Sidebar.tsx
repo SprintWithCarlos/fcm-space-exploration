@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
           };
 
           return (
-            <li className={defineActive() ? "active" : ""}>
+            <li className={defineActive() ? "active" : ""} key={item.name}>
               <Link to={item.url} key={item.name}>
                 <span>
                   <strong>{`0${i}`}</strong>
