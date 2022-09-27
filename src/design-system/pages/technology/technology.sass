@@ -3,7 +3,7 @@
   height: auto
   min-height: 100vh
   padding: unset
-  #desktop
+  #desktop-tech
     display: none
   &__header
     display: flex
@@ -102,6 +102,8 @@
     letter-spacing: 2.36px
     text-transform: uppercase
   @include tablet
+    #desktop-tech
+      display: none
     .technology__header
       justify-content: flex-start
       display: flex
@@ -130,10 +132,10 @@
     min-height: unset
     padding-bottom: 0
     position: relative
-    #desktop
+    #desktop-tech
       display: block
       width: 100%
-    #mobile
+    #mobile-tech
       display: none
     &>*
       text-align: left
