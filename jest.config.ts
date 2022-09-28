@@ -5,7 +5,7 @@ export default async (): Promise<Config.InitialOptions> => ({
   verbose: true,
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.tsx"],
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(ts|tsx)$": "ts-jest"
   },
   moduleNameMapper: {
     "^.+\\.svg$": "<rootDir>/test/__mocks__/svg.ts",
@@ -13,9 +13,9 @@ export default async (): Promise<Config.InitialOptions> => ({
       "<rootDir>/test/__mocks__/styleMock.tsx",
     "\\.(css|less|sass)$": "<rootDir>/test/__mocks__/styleMock.tsx",
     "^@/(.*)$": "<rootDir>/src/$1",
-    "^d3": "<rootDir>/node_modules/d3/dist/d3.min.js",
+    "^d3": "<rootDir>/node_modules/d3/dist/d3.min.js"
   },
-  transformIgnorePatterns: ["/node_modules/(?!(^d3)/)"],
+  transformIgnorePatterns: ["/node_modules/(?!(^d3)/)"]
   // coverageThreshold: {
   //   global: {
   //     branches: 80,
