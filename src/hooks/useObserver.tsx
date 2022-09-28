@@ -4,12 +4,12 @@ export const useObserver = (
   options?: IntersectionObserverInit | undefined
 ): [
   IntersectionObserver,
-  React.Dispatch<SetStateAction<NodeList | undefined>>,
-  NodeList | undefined
+  React.Dispatch<SetStateAction<NodeListOf<any> | undefined>>,
+  NodeListOf<any> | undefined
 ] => {
-  const [elements, setElements] = useState<NodeList>();
-  const [entries, setEntries] = useState<NodeList>();
-  const callBack: any = (entries: NodeList) => {
+  const [elements, setElements] = useState<NodeListOf<any>>();
+  const [entries, setEntries] = useState<NodeListOf<any>>();
+  const callBack: any = (entries: NodeListOf<any>) => {
     // console.log(entries);
     setEntries(entries);
   };

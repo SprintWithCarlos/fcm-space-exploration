@@ -11,7 +11,15 @@ const mockTechnology: TechnologyType = {
   description: "",
 };
 describe("Technology", () => {
+  let originalObserver: any;
   beforeEach(() => {
+    originalObserver = global.IntersectionObserver;
+    global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+      observe: () => null,
+      disconnect: () => null,
+
+      unobserve: () => null,
+    })) as jest.Mock;
     render(<Technology data={[{ ...mockTechnology }]} />, {
       wrapper: BrowserRouter,
     });

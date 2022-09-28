@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useObserver } from "@/hooks/useObserver";
 import "./slider.sass";
-import { TechnologyType } from "@/design-system/pages/technology/Technology";
-import { CrewType } from "@/design-system/pages/crew/Crew";
 
 type SliderProps = {
   setCurrentItem: React.Dispatch<React.SetStateAction<number>>;

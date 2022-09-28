@@ -8,7 +8,6 @@ import data from "@/data.json";
 import Crew from "./design-system/pages/crew/Crew";
 import Destinations from "./design-system/pages/destinations/Destinations";
 import Technology from "./design-system/pages/technology/Technology";
-import Test from "./design-system/pages/test/Test";
 
 function App() {
   const elements = [
@@ -28,7 +27,6 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="*" element={<NoMatch />} />
-        <Route path="/test" element={<Test data={data.technology} />} />
         {customRoutes()}
       </Routes>
     </BrowserRouter>

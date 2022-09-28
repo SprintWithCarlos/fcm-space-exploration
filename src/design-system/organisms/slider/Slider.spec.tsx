@@ -2,8 +2,21 @@ import { render, screen } from "@testing-library/react";
 import Slider from "./Slider";
 
 describe("Slider", () => {
+  // const [currentItem, setCurrentItem] = useState(0);
+  let originalObserver: any;
   beforeEach(() => {
-    render(<Slider />);
+    originalObserver = global.IntersectionObserver;
+    global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+      observe: () => null,
+      disconnect: () => null,
+
+      unobserve: () => null,
+    })) as jest.Mock;
+    render(
+      <Slider setCurrentItem={() => {}}>
+        <p>Test</p>
+      </Slider>
+    );
   });
 
   test("renders ", async () => {
@@ -11,4 +24,3 @@ describe("Slider", () => {
     expect(sliderComponent).toBeInTheDocument();
   });
 });
-
